@@ -27,7 +27,7 @@ const CryptoItem = props => {
         <Image
           borderRadius="full"
           h={['30px', '30px']}
-          w={['50px', '30px']}
+          w={['30px', '30px']}
           src={image}
           alt={id}
         />
