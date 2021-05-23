@@ -17,7 +17,6 @@ import useCryptoLists from '../../hooks/useCryptoLists';
 
 const CryptoListsItems = props => {
   const isMobile = isMobileDevice();
-  console.log(isMobile, 'is mobile');
   const [searchString, setSearchString] = useState('');
 
   const { filteredCurrencies } = useCryptoLists({ searchString: searchString });
