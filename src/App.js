@@ -8,6 +8,7 @@ import {
   Text,
   theme,
 } from '@chakra-ui/react';
+
 import { ColorModeSwitcher } from './ColorModeSwitcher';
 import logo from './assets/logo.svg';
 
