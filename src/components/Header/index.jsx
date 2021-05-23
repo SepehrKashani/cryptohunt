@@ -5,18 +5,14 @@ import cryptoImage from './assets/crypto.svg';
 const Header = () => {
   return (
     <Flex
-      w={['100%', '70%']}
       direction={['column', 'row']}
-      m={['32px', '64px auto']}
+      m={['32px auto', '64px auto']}
       alignItems="center"
+      justifyContent={['center', 'space-between']}
     >
-      <Flex
-        direction="column"
-        justifyContent={['center', 'space-between']}
-        width={['100%', 'calc(100% - 450px)']}
-      >
+      <Flex direction="column" width={['100%', 'calc(100% - 450px)']}>
         <Text fontSize="2xl" mb="32px">
-          CryptoHunter
+          Cryptohunter
         </Text>
         <Text fontSize="md">
           There are many variations of passages of Lorem Ipsum available, but
@@ -25,10 +21,10 @@ const Header = () => {
         </Text>
       </Flex>
       <Image
-        borderRadius="full"
         src={cryptoImage}
-        width={['40%', '350px']}
+        width="290px"
         alt="HeaderImage"
+        display={['none', 'block']}
         backgroundSize="contain"
       />
     </Flex>

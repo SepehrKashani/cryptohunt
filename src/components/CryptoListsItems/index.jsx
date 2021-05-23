@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import isMobileDevice from 'is-mobile';
 import {
   Box,
   Input,
@@ -15,13 +16,14 @@ import CryptoItem from './CryptoItem/';
 import useCryptoLists from '../../hooks/useCryptoLists';
 
 const CryptoListsItems = props => {
+  const isMobile = isMobileDevice();
+  console.log(isMobile, 'is mobile');
   const [searchString, setSearchString] = useState('');
-  console.log(searchString, 'searchString');
 
   const { filteredCurrencies } = useCryptoLists({ searchString: searchString });
 
   return (
-    <Box w={['100%', '70%']} m={['0', '64px auto']}>
+    <Box>
       <Input
         placeholder="e.g. bitcoin"
         value={searchString}
@@ -37,9 +39,13 @@ const CryptoListsItems = props => {
             <Th></Th>
             <Th>Name</Th>
             <Th isNumeric>Current Price</Th>
-            <Th isNumeric>Price Change (24h)</Th>
-            <Th isNumeric>Price Change (%)</Th>
-            <Th isNumeric>Market Cap</Th>
+            {!isMobile && (
+              <>
+                <Th isNumeric>Price Change (24h)</Th>
+                <Th isNumeric>Price Change (%)</Th>
+                <Th isNumeric>Market Cap</Th>
+              </>
+            )}
           </Tr>
         </Thead>
         <Tbody>
